@@ -1,6 +1,6 @@
 #include <iostream>
-#include <string.h>
-#include <math.h>
+#include <cstring>
+#include <cmath>
 #include <unistd.h>
 using namespace std;
 
@@ -12,10 +12,10 @@ int main() {
     char b[1760];
     printf("\x1b[2J");
     for(;;) {
-        memset(b,32,1760);
-        memset(z,0,7040);
-        for(j=0; j < 6.28; j += 0.07) {
-            for(i=0; i < 6.28; i += 0.02) {
+        memset(b, 32, 1760);
+        memset(z, 0, 7040);
+        for(j = 0; j < 6.28; j += 0.07) {
+            for(i = 0; i < 6.28; i += 0.02) {
                 float c = sin(i);
                 float d = cos(j);
                 float e = sin(A);
@@ -28,12 +28,24 @@ int main() {
                 float n = sin(B);
                 float t = c * h * g - f * e;
                 int x = 40 + 30 * D * (l * h * m - t * n);
-                int y= 12 + 15 * D * (l * h * n + t * m);
+                int y = 12 + 15 * D * (l * h * n + t * m);
                 int o = x + 80 * y;
                 int N = 8 * ((f * e - c * d * g) * m - c * d * e - f * g - l * d * n);
+                
                 if(22 > y && y > 0 && x > 0 && 80 > x && D > z[o]) {
                     z[o] = D;
-                    b[o] = "...,,,ooo000"[N > 0 ? N : 0]; //works much better with ".,-~:;=!*#$@" or "JackEatDonut"
+                    b[o] = ".,-~:;=!*#$@"[N > 0 ? N : 0];
+                    // Additional donut designs
+                    // b[o] = "JackEatDonut"[N > 0 ? N : 0];
+                    // b[o] = "====o===="[N > 0 ? N : 0];
+                    // b[o] = "O O O O O"[N > 0 ? N : 0];
+                    // b[o] = "###===###"[N > 0 ? N : 0];
+                    // b[o] = "@@@@@@@@"[N > 0 ? N : 0];
+                    // b[o] = "(((  )))"[N > 0 ? N : 0];
+                    // b[o] = "===000==="[N > 0 ? N : 0];
+                    // b[o] = "~~~~~~~"[N > 0 ? N : 0];
+                    // b[o] = "  0 0  "[N > 0 ? N : 0];
+                    // b[o] = "  OOO  "[N > 0 ? N : 0];
                 }
             }
         }
