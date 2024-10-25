@@ -1,67 +1,68 @@
-Floating Donut 🍩
+# 🍩 Spinning Donut Animation
 
-Ever thought donuts and C++ could make a mesmerizing combo? This C++ program brings an animated, rotating donut right into your terminal, with a unique ASCII twist. Inspired by the genius behind the original donut animation, this project merges trigonometry and ASCII art for a hypnotic effect. 🚀
+**An ASCII-based spinning donut animation** made in C++! This project offers a mesmerizing effect that rotates endlessly in your terminal using creative ASCII art, trigonometry, and a simple looping algorithm.
 
+### Steps to Run
 
----
+1. Clone the repository or copy the code to a local file, say `donut.cpp`.
+2. Open your terminal and navigate to the directory containing `donut.cpp`.
+3. Compile the code with:
 
-🔍 How It Works
+   ```bash
+   g++ donut.cpp -o donut -lm
+   ```
 
-The animation uses sine and cosine functions to calculate points on a 3D torus, projecting them onto a 2D plane. This method creates depth and shading, making the donut appear as if it's rotating in real-time.
+4. Run the compiled program:
 
-🔢 Math Breakdown
+   ```bash
+   ./donut
+   ```
 
-Sine & Cosine: These functions drive the rotation, calculating angles for each point on the donut.
+## 🎨 Custom Patterns
 
-Depth Mapping: Shading is achieved by evaluating each point’s angle relative to a light source.
+This donut includes several ASCII patterns to enhance its effect. Uncomment one of the patterns below and recompile to see the changes:
 
-ASCII Art: Different symbols (.,-~:;=!*#$@) depict depth by altering brightness/shade. Plus, you can choose from extra designs for a custom donut vibe! 🖌️
+```cpp
+// b[o] = "JackEatDonut"[N > 0 ? N : 0];
+// b[o] = "====o===="[N > 0 ? N : 0];
+// b[o] = "O O O O O"[N > 0 ? N : 0];
+// b[o] = "###===###"[N > 0 ? N : 0];
+// b[o] = "@@@@@@@@"[N > 0 ? N : 0];
+// b[o] = "(((  )))"[N > 0 ? N : 0];
+// b[o] = "===000==="[N > 0 ? N : 0];
+// b[o] = "~~~~~~~"[N > 0 ? N : 0];
+// b[o] = "  0 0  "[N > 0 ? N : 0];
+// b[o] = "  OOO  "[N > 0 ? N : 0];
+```
 
+Simply replace the line:
 
+```cpp
+b[o] = ".,-~:;=!*#$@"[N > 0 ? N : 0];
+```
 
----
+with any of the lines above, recompile, and run the animation again.
 
-🍩 ASCII Donut Toppings 🍩
+## 🛠️ How It Works
 
-Uncomment any line in the code to customize the donut “frosting”:
+The program uses trigonometric functions to compute points in a 3D space, then projects them into 2D ASCII characters. Each frame is redrawn with slight rotation increments (A and B variables) to simulate a spinning effect.
 
-Classic: .,-~:;=!*#$@
+### Main Logic Overview
 
-Goofy: "AshEatDonut"
+1. **Trigonometric Projection**: Uses sin and cos functions to project points in a rotating donut shape.
+2. **Buffer Refreshing**: Continuously updates the terminal screen with new frames, creating an animated effect.
+3. **Sleep Cycle**: Adjust `usleep(30000);` to control the animation speed (lower for faster spin, higher for slower).
 
-Chill Waves: "~~~~~~~"
+## 🔧 Modifications
 
-Cool Rings: "###===###"
-
-Binary Donut: "O O O O O"
-
-Cosmic Donut: "(((  )))"
-
-Monochrome: "  OOO  "
-
-
-
----
-
-🚀 How to Run
-
-1. Compile the Code
-
-g++ donut.cpp -o donut -lm
-
-
-2. Run the Executable
-
-./donut
-
-
-
-Ensure your terminal supports ANSI escape codes for the best experience!
-
+You can change the animation speed by modifying the `usleep` parameter. For example, `usleep(10000);` will make it faster.
 
 ---
 
-🧑‍🎤 Credits
+## 📜 Note
 
-A nod to the original creator of this legendary donut animation! It’s a joy to bring it to life again in C++.
+This project is not my original work. I have added some ASCII templates to give a cooler animation effect, making it a fun, customizable donut animation! 😊 Feel free to fork, modify, and use it however you like!
 
+Enjoy the spin! 🍩✨
+
+--- 
