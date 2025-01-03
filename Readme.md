@@ -66,3 +66,5 @@ This project is not my original work. I have added some ASCII templates to give 
 Enjoy the spin! 🍩✨
 
 --- 
+
+### **If you find this project helpful, consider giving it a star!** ⭐
